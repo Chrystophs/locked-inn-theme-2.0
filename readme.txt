@@ -1,4 +1,4 @@
-== Chris's Template ==
+== Locked Inn Template ==
 
 == Overview ==
 
