@@ -1,0 +1,31 @@
+//**** Lightbox Group ****//
+.lightbox-wrapper {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 5000;
+  background: rgba(0, 0, 0, 0.5);
+
+  .lightbox-inner {
+    position: relative;
+    display: flex;
+    padding: 40px;
+    margin: 50px;
+    height: calc(100% - 100px);
+    width: auto;
+    background: #333;
+    border-radius: 10px;
+
+    video {
+      position: relative;
+      width: auto;
+      height: 100%;
+      margin: 0 auto;
+    }
+  }
+}

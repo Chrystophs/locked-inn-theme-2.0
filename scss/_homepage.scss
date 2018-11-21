@@ -1,0 +1,240 @@
+//**** Homepage Group ****//
+#hp-container {
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+}
+.hp-header {
+  font-size: 2.5em;
+  color: #fff;
+  text-align: center;
+  padding-bottom: 10px;
+  margin: 0 auto 65px;
+}
+#hp-head-image {
+  display: grid;
+  max-height: 650px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-image: url(../img/banner.jpg);
+}
+.hp-img-overlay {
+  padding: 0 30px 25px;
+}
+.hp-button-wrapper {
+  grid-template-columns: 1fr 2fr 1fr;
+}
+#hp-welcome {
+  display: grid;
+  justify-content: center;
+  background-color: #fff;
+  /*
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-image: url(../img/welcome.jpg); */
+  img {
+    height: auto;
+    width: 100%;
+  }
+}
+#hp-about {
+  display: grid;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0px auto;
+  padding: 50px 30px;
+  text-align: center;
+  font-size: 1em;
+  color: #666;
+  overflow: hidden;
+  letter-spacing: 0.02em;
+
+  h2.hp-header {
+    margin: 20px 0 10px;
+    padding: 0 0 5px;
+    font-weight: 700;
+    font-size: 2.5em;
+    color: #2c3539;
+    letter-spacing: 0.05em;
+  }
+}
+
+/* Rooms Section */
+#hp-rooms {
+  padding: 50px 0px 0px;
+  background: #2c3539;
+
+  .gc-half {
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .room-content {
+    display: grid;
+    position: relative;
+    justify-content: center;
+    align-content: center;
+    padding: 70px;
+    color: #fff;
+    text-align: center;
+    background: #46575e;
+    z-index: 2;
+
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 40px;
+      left: 40px;
+      height: calc(100% - 80px);
+      width: calc(100% - 80px);
+      border: 1px solid #3c4451;
+      background: clear;
+    }
+  }
+  h3 {
+    font-size: 2em;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+    margin: 0 auto 10px;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    transition: all 0.5s ease-in-out;
+    z-index: 1;
+
+    &:hover {
+      transform: scale(1.1, 1.1);
+    }
+  }
+}
+
+/* FAQ */
+#hp-faqs {
+  padding: 50px 30px 10px;
+
+  .hp-header {
+    color: #2c3539;
+    margin: 0;
+  }
+  p {
+    text-align: center;
+  }
+  .gc-half {
+    padding-top: 30px;
+  }
+  .faq-questions {
+    list-style: none;
+
+    .question {
+      position: relative;
+      font-weight: bold;
+      font-size: 1.1em;
+      padding: 0 0 0 30px;
+      margin-top: 20px;
+      cursor: pointer;
+
+      ul {
+        margin: 10px 0;
+        padding: 10px 15px;
+      }
+
+      .answer {
+        position: relative;
+        background: #efefef;
+        padding: 15px 20px;
+        border-radius: 5px;
+        color: #333;
+
+        p {
+          margin: 0;
+          text-align: left;
+        }
+
+        &:after {
+          content: "";
+          display: block;
+          position: absolute;
+          bottom: 100%;
+          left: 15px;
+          height: 0;
+          width: 0;
+          border-color: transparent transparent #efefef transparent;
+          border-style: solid;
+          border-width: 0 6px 0px 6px;
+          background: transparent;
+          overflow: visible;
+          transition: all 0.3s ease-in-out 0.5s;
+        }
+      }
+
+      .dropdown {
+        display: none;
+        list-style: none;
+        font-weight: 400;
+        overflow: visible;
+      }
+    }
+
+    .open.question .answer::after {
+      border-width: 0 10px 14px 10px;
+    }
+  }
+  .lock-svg {
+    height: auto;
+    width: 25px;
+    padding: 5px;
+    position: absolute;
+    top: -2px;
+    left: 0;
+    overflow: visible;
+    .lock-path1 {
+      transform: translate(-0.5px, -3.5px);
+    }
+  }
+}
+
+@keyframes openlock {
+  0% {
+    transform: translate(-0.5px, -3.5px);
+  }
+  100% {
+    transform: translate(-0.5px, -5.5px);
+  }
+}
+@keyframes closelock {
+  0% {
+    transform: translate(-0.5px, -5.5px);
+  }
+  100% {
+    transform: translate(-0.5px, -3.5px);
+  }
+}
+
+/* Comments */
+#hp-comments {
+  padding: 75px 30px 80px;
+  margin: 0 auto;
+  max-width: 1200px;
+  .hp-header {
+    color: #2c3539;
+    margin: 0 0 50px;
+  }
+}
+
+.hp-tripadvisor-links {
+  display: grid;
+  max-width: 1200px;
+  margin: 20px auto;
+  ul {
+    display: grid;
+    list-style: none;
+    padding: 0;
+    margin: 30px 0;
+    justify-content: end;
+  }
+}

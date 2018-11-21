@@ -1,0 +1,19 @@
+@media (max-width: 1120px) {
+  nav {
+    display: none;
+  }
+  #hp-head-image {
+    background-position: top left;
+    .hp-img-overlay.gc-half {
+      grid-template-columns: 2fr 1fr;
+    }
+  }
+  #hp-button-wrapper {
+    grid-template-columns: 2fr 1fr;
+  }
+  #hp-rooms {
+    img {
+      height: 100%;
+    }
+  }
+}

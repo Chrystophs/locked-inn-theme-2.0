@@ -1,0 +1,66 @@
+//**** Grid Group ****//
+body {
+    padding: 0;
+    margin: 0 auto;
+}
+.gc {
+    display: grid;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+.gc-fw {
+    display: grid;
+    width: 100%;
+}
+.gc-header {
+    display: grid;
+    width: 100%;
+    justify-content: center;
+}
+.gc-half {
+    display: grid;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: auto;
+    grid-template-areas: 
+        "left right"
+        "lower lower";
+}
+.gc-fh {
+    display: grid;
+    height: 100vh;
+    width: 100vw;
+}
+.gc-thirds {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "left center right";
+    justify-content: center;
+}
+.gc-jfs {
+    justify-content: start;
+}
+.gc-jcc {
+    justify-content: center;
+}
+.gc-jce {
+    justify-content: end;
+}
+.gc-acc {
+    align-content: center;
+}
+.gc-ace {
+    align-content: end;
+}
+.gc-aic {
+    align-items: center;
+}
+.gc-aie {
+    align-items: end;
+}
+.gc-ase {
+    align-self: end;
+}
