@@ -1,0 +1,117 @@
+#sp-container {
+  display: grid;
+  max-width: 1200px;
+  padding: 20px 30px;
+  margin: 0 auto;
+  justify-content: center;
+  text-align: center;
+  background: #fff;
+  .sp-article {
+    display: grid;
+    color: #333333;
+    font-family: "Montserrat", arial, sans-serif;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "title title"
+      "section section";
+
+    .sp-title {
+      grid-area: title;
+      font-size: 2.4em;
+      padding-bottom: 10px;
+      margin-bottom: 50px;
+      text-transform: uppercase;
+    }
+
+    .sp-section {
+      grid-area: section;
+      display: grid;
+      text-align: left;
+      font-size: 1.1em;
+
+      p {
+        padding: 0 30px;
+        margin: 0;
+        line-height: 1.4em;
+      }
+      .btn-book {
+        position: relative;
+        display: grid;
+        height: 39px;
+        width: 85px;
+        border: 1px solid #888;
+        border-radius: 2px;
+        font-size: 0.8em;
+        padding: 10px 20px;
+        font-weight: 700;
+        margin: 30px auto 0;
+        background: transparent;
+        transform: scale(1, 1);
+        transition: all 0.5s ease-in-out;
+
+        &:hover {
+          color: #fff;
+          transform: scale(1.2, 1.2);
+          background: #2c3539;
+        }
+      }
+    }
+  }
+  .sp-sub-title {
+    width: 100%;
+    font-size: 1.8em;
+    padding-bottom: 5px;
+    margin: 50px auto 10px;
+  }
+  #sp-related-rooms {
+    display: grid;
+    width: 100%;
+    overflow: hidden;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    .sp-room-tile {
+      width: 100%;
+      text-align: center;
+
+      .room-name {
+        font-size: 1em;
+        padding-bottom: 5px;
+      }
+
+      .img-wrapper {
+        position: relative;
+
+        img {
+          height: auto;
+          width: 100%;
+        }
+
+        .img-overlay {
+          position: absolute;
+          display: grid;
+          align-content: center;
+          justify-content: center;
+          opacity: 0;
+          top: 20px;
+          left: 20px;
+          right: 20px;
+          bottom: 20px;
+          width: auto;
+          font-weight: 400;
+          font-family: "Montserrat", Arial, sans-serif;
+          padding: 5px 20px;
+          font-size: 0.7em;
+          line-height: 1.4em;
+          border-radius: 5px;
+          background: rgba(219, 219, 219, 0.9);
+          transition: all 0.5s ease-in-out;
+        }
+
+        &:hover .img-overlay {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

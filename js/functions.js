@@ -39,11 +39,8 @@ var ChrisTemplate = {
     });
     $(window).on("resize", function() {});
   },
-
   WindowScroll: function() {},
-
   WindowResize: function() {},
-
   Header: function() {
     /* Navigation */
     $(".menu-item > a")
@@ -82,9 +79,7 @@ var ChrisTemplate = {
       return false;
     });
   },
-
   Body: function() {},
-
   Homepage: function() {
     //Watch Video Btn and Auto Play
     $(".cs-btn-watch-video").click(function() {
@@ -132,13 +127,12 @@ var ChrisTemplate = {
       }
     }); //End FAQ & Locks
   },
-
+  Subpage: function() {},
   ContactUs: function() {
     //Click function for Walking Directions
     $(".btn-walk").click(function() {
       $("#walking-map").fadeIn();
     }); // End Click
   },
-
   Footer: function() {}
 };
