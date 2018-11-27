@@ -30,7 +30,7 @@ var ChrisTemplate = {
     if ($("#hp-container").length > 0) {
       this.Homepage();
     }
-    if ($("#gb-contact-us").length) {
+    if ($("#sp-contact").length) {
       this.ContactUs();
     }
 
@@ -40,7 +40,16 @@ var ChrisTemplate = {
     $(window).on("resize", function() {});
   },
   WindowScroll: function() {},
-  WindowResize: function() {},
+  WindowResize: function() {
+    var wW = $(widnow).width();
+    if (wW > 1120) {
+      if ($("#menu-main-menu").attr("aria-hidden") == "true") {
+        $("#menu-main-menu")
+          .fadeIn()
+          .attr("Aria-hidden", "false");
+      }
+    }
+  },
   Header: function() {
     /* Navigation */
     $(".menu-item > a")
@@ -74,6 +83,24 @@ var ChrisTemplate = {
         1500
       );
     }
+    /* To Top Button */
+    $("#gb-to-top").click(function() {
+      navigateTo("#top");
+    });
+
+    $(".nav-btn").click(function() {
+      if ($(this).hasClass("open")) {
+        $(this).removeClass("open");
+        $("#menu-main-menu")
+          .fadeOut()
+          .removeClass("open");
+      } else {
+        $(this).addClass("open");
+        $("#menu-main-menu")
+          .fadeIn()
+          .addClass("open");
+      }
+    });
     $("#hp-btn-learn").click(function() {
       navigateTo("#hp-about");
       return false;
@@ -133,6 +160,9 @@ var ChrisTemplate = {
     $(".btn-walk").click(function() {
       $("#walking-map").fadeIn();
     }); // End Click
+    $("#walking-map").click(function() {
+      $(this).fadeOut();
+    });
   },
   Footer: function() {}
 };

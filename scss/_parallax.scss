@@ -1,4 +1,7 @@
 //**** Parallax Group ****//
+[data-parallax-container="true"] {
+  overflow: hidden;
+}
 [data-parallax="true"] {
   opacity: 0;
   position: relative;
@@ -13,25 +16,25 @@
 [data-parallax="true"][data-delay="3"] {
   transition: all 0.75s ease-in-out 0.3s;
 }
-[data-direction="slide-up"] {
+[data-parallax="true"][data-direction="slide-up"] {
   transform: translateY(100px);
 }
-[data-direction="slide-down"] {
+[data-parallax="true"][data-direction="slide-down"] {
   transform: translateY(-100px);
 }
-[data-direction="slide-right"] {
+[data-parallax="true"][data-direction="slide-right"] {
   transform: translateX(-150px);
 }
-[data-direction="slide-left"] {
+[data-parallax="true"][data-direction="slide-left"] {
   transform: translateX(150px);
 }
-[data-direction="slide-up"][data-shown="true"],
+[data-parallax="true"][data-direction="slide-up"][data-shown="true"],
 [data-direction="slide-down"][data-shown="true"] {
   opacity: 1;
   transform: translateY(0);
 }
-[data-direction="slide-left"][data-shown="true"],
-[data-direction="slide-right"][data-shown="true"] {
+[data-parallax="true"][data-direction="slide-left"][data-shown="true"],
+[data-parallax="true"][data-direction="slide-right"][data-shown="true"] {
   opacity: 1;
   transform: translateX(0);
 }

@@ -35,11 +35,11 @@
   <header id="top" class="gc-header">
     <div class="gc-half">
       <a class="gb-header-address" href="<?php echo get_option('home'); ?>/contact-us/">18 FORT STREET, GRAND CAYMAN</a>
-      <nav>
+      <nav id="gb-top-nav">
         <button class="cs-btn-reset nav-btn">
-          <span></span>
-          <span></span>
-          <span></span>
+          <span class="menu-line line1"></span>
+          <span class="menu-line line2"></span>
+          <span class="menu-line line3"></span>
         </button>
         <?php wp_nav_menu( array(
           'theme_location' => 'Main Menu',
@@ -51,7 +51,8 @@
         ?>
       </nav>
       <a id="gb-logo" href="<?php echo get_option('home'); ?>" alt="<?php the_title(); ?>">
-        <img src="<?php bloginfo('template_url'); ?>/img/logo-big.png">
+        <img class="large-logo" src="<?php bloginfo('template_url'); ?>/img/logo-big.png">
+        <img class="small-logo" src="<?php bloginfo('template_url'); ?>/img/logo2.png">
       </a> 
     </div>
   </header>

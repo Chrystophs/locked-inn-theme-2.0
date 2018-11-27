@@ -1,6 +1,74 @@
 @media (max-width: 1120px) {
   nav {
-    display: none;
+    overflow: visible;
+    .nav-btn {
+      position: relative;
+      height: 30px;
+      width: 30px;
+      overflow: hidden;
+      z-index: 20;
+
+      .menu-line {
+        position: absolute;
+        display: block;
+        content: "";
+        height: 4px;
+        width: 100%;
+        border-radius: 2px;
+        left: 0;
+        right: 0;
+        background: #fff;
+        transition: all 0.5s ease-in-out;
+      }
+      .line1 {
+        top: 4px;
+        transition: all 0.5s ease-in-out 0.1s;
+      }
+      .line2 {
+        top: calc(50% - 2px);
+      }
+      .line3 {
+        top: calc(100% - 8px);
+        transition: all 0.5s ease-in-out 0.1s;
+      }
+    }
+    .nav-btn.open {
+      .line1 {
+        top: 50%;
+        left: 0;
+        transform: rotate(-45deg);
+      }
+      .line2 {
+        left: 100%;
+      }
+      .line3 {
+        top: 50%;
+        left: 0;
+        transform: rotate(45deg);
+      }
+    }
+    #menu-main-menu {
+      display: none;
+      position: absolute;
+      top: 0;
+      padding: 20px 30px;
+      width: 300px;
+      left: 100%;
+      background: #2e3539;
+      transition: left 0.5s ease-in-out;
+      .menu-item a {
+        text-align: left;
+
+        &:after {
+          right: auto;
+          margin: 0;
+        }
+      }
+    }
+    #menu-main-menu.open {
+      z-index: 10;
+      left: calc(100% - 270px);
+    }
   }
   #hp-head-image {
     background-position: top left;
@@ -14,6 +82,225 @@
   #hp-rooms {
     img {
       height: 100%;
+    }
+  }
+  #sp-container .sp-article .sp-section.gc-half {
+    grid-template-columns: 1fr;
+    grid-template-areas: "center";
+    text-align: center;
+    img {
+      margin: 0 auto 30px;
+    }
+    .sp-content {
+      padding: 0;
+    }
+  }
+}
+@media (max-width: 768px) {
+  #top .gc-half {
+    grid-template-columns: 350px 1fr;
+  }
+  #hp-head-image {
+    max-height: 450px;
+
+    .hp-img-overlay.gc-half {
+      grid-template-columns: 2fr 1fr;
+
+      .cs-btn-learn-more,
+      .cs-btn-watch-video {
+        width: 100px;
+        height: 53px;
+        font-size: 1.3em;
+        border-radius: 6px;
+      }
+      .book-now img {
+        height: 140px;
+      }
+    }
+  }
+  #sp-container .sp-article .sp-section.gc-half img {
+    max-width: 100%;
+    height: auto !important;
+  }
+
+  #sp-container .sp-article .sp-section p {
+    padding: 0;
+  }
+
+  #sp-container #sp-related-rooms .sp-room-tile .img-wrapper .img-overlay {
+    display: none;
+  }
+  .contact-thirds.gc-thirds {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "left middle"
+      "right right";
+    margin-bottom: 25px;
+  }
+  #hp-rooms {
+    .room.gc-half {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "roomimage"
+        "roomcontent";
+      img {
+        height: auto;
+      }
+    }
+  }
+  .gb-footer-lower.gc-thirds {
+    grid-template-columns: 1fr 1fr;
+
+    #gb-bottom-nav {
+      display: none;
+    }
+  }
+}
+@media (max-width: 640px) {
+  header.gc-header {
+    justify-content: stretch;
+    .gb-header-address {
+      max-width: 220px;
+      text-align: center;
+    }
+    #gb-logo {
+      text-align: center;
+      margin: 15px auto 5px;
+      .large-logo {
+        display: none;
+      }
+      .small-logo {
+        display: block;
+        height: 100px;
+        width: auto;
+      }
+    }
+  }
+  #hp-faqs .gc-half {
+    grid-template-areas: "center";
+    grid-template-columns: 1fr;
+
+    .faq-questions {
+      margin: 0;
+      padding: 0;
+    }
+  }
+  #sp-container #sp-related-rooms {
+    grid-template-columns: 1fr;
+    grid-template-areas: "center";
+    img {
+      max-width: 300px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  #hp-head-image {
+    max-height: 300px;
+
+    .hp-img-overlay.gc-half {
+      grid-template-areas: "center";
+      grid-template-columns: 1fr;
+      padding: 0 20px 10px;
+
+      .book-now img {
+        height: 100px;
+      }
+    }
+  }
+  .cs-tripadvisor-btn {
+    display: none !important;
+  }
+  #sp-container .sp-article .sp-title {
+    font-size: 1.8em;
+  }
+  footer {
+    .gb-footer-info.gc-thirds {
+      grid-template-areas:
+        "left center"
+        "right right";
+      grid-template-columns: 1fr 1fr;
+    }
+    #gb-social-wrapper {
+      grid-area: right;
+      margin-top: 20px;
+    }
+    .gb-footer-lower.gc-thirds {
+      grid-template-areas:
+        "btntop"
+        "copyright";
+      grid-template-columns: 1fr;
+      #gb-copyright {
+        grid-area: copyright;
+        margin-top: 20px;
+      }
+      #gb-to-top {
+        grid-area: btntop;
+      }
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  header.gc-header #gb-logo .small-logo {
+    height: 80px;
+  }
+  header.gc-header .gb-header-address {
+    display: none;
+  }
+  #hp-head-image {
+    height: 220px;
+    background-position: -30px 0;
+    .hp-img-overlay.gc-half {
+      .book-now img {
+        height: 80px;
+      }
+      .cs-btn-learn-more {
+        height: 50px;
+        width: 80px;
+      }
+    }
+  }
+  #top .gc-half {
+    grid-template-columns: 1fr 1fr;
+  }
+  #hp-about {
+    padding: 20px;
+    h2.hp-header {
+      font-size: 1.6em;
+    }
+  }
+  .hp-header {
+    font-size: 1.6em;
+    margin-bottom: 35px;
+  }
+  #hp-rooms {
+    padding: 25px 0 0;
+
+    h3 {
+      font-size: 1.4em;
+    }
+    .room-content {
+      padding: 50px;
+
+      &:before {
+        top: 20px;
+        left: 20px;
+        height: calc(100% - 40px);
+        width: calc(100% - 40px);
+      }
+    }
+  }
+  footer {
+    .gb-footer-info.gc-thirds {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "left"
+        "center"
+        "right";
+    }
+    .footer-logo {
+      margin-bottom: 20px;
     }
   }
 }

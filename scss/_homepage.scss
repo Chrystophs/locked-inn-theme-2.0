@@ -68,14 +68,22 @@
     max-width: 100%;
     overflow: hidden;
   }
+  .gc-half.rm1 {
+    grid-template-areas: "roomimage roomcontent";
+  }
+  .gc-half.rm2 {
+    grid-template-areas: "roomcontent roomimage";
+  }
 
   .room-content {
     display: grid;
+    grid-area: roomcontent;
     position: relative;
     justify-content: center;
     align-content: center;
     padding: 70px;
     color: #fff;
+    grid-area: roomcontent;
     text-align: center;
     background: #46575e;
     z-index: 2;
@@ -102,8 +110,10 @@
   }
 
   img {
+    grid-area: roomimage;
     width: 100%;
     height: auto;
+    grid-area: roomimage;
     transition: all 0.5s ease-in-out;
     z-index: 1;
 
@@ -125,6 +135,7 @@
     text-align: center;
   }
   .gc-half {
+    overflow: hidden;
     padding-top: 30px;
   }
   .faq-questions {
@@ -217,7 +228,7 @@
 
 /* Comments */
 #hp-comments {
-  padding: 75px 30px 80px;
+  padding: 75px 50px 80px;
   margin: 0 auto;
   max-width: 1200px;
   .hp-header {

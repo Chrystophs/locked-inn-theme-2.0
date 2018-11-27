@@ -21,9 +21,11 @@ var csParallax = {
     if (wW > 1050) {
       var offset = wS + wH / 1.5;
     } else if (wW >= 768) {
-      var offset = wS + wH / 1.35;
+      var offset = wS + wH / 1.15;
     } else {
-      $("[data-parallax=true").attr("data-parallax", "false");
+      $("[data-parallax=true").each(function(k, v) {
+        $(v).attr("data-parallax", "false");
+      });
     }
 
     $("[data-parallax=true]").each(function(k, v) {

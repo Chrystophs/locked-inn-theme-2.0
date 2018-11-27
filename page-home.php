@@ -48,7 +48,7 @@ get_header(); ?>
       </video>
     </div>
   </div>
-  <section id="hp-about">
+  <section id="hp-about" data-parallax-container="true">
     <div class="parallax" aria-hidden="true" data-parallax="true" data-direction="slide-down" data-shown="false">
       <h2 class="hp-header underline">WELCOME TO LOCKED INN</h2>
       <p>
@@ -58,10 +58,10 @@ get_header(); ?>
       </p>
     </div>
   </section>
-  <section id="hp-welcome">
+  <section id="hp-welcome" data-parallax-container="true">
     <img data-parallax="true" data-direction="slide-up" data-shown="false" aria-hidden="true" src="<?php bloginfo('template_url'); ?>/img/welcome.jpg" alt="What is an escape room? 6 poeple enter a themed room with 45 minutes to find clues and solve puzzles in n attempt to make their way out. Escape into a world of altered reality. Tons of fun as you test your skill. Do you have waht it takesto get out or will you stay Locked Inn?"/>
   </section>
-  <section id="hp-rooms">
+  <section id="hp-rooms" data-parallax-container="true">
     <h2 class="hp-header underline" data-parallax="true" data-direction="slide-down" data-shown="false" aria-hidden="true">THE ROOMS</h2>
     <?php 
       $i = 1;
@@ -70,7 +70,7 @@ get_header(); ?>
     ?>
     <?php if($loop -> have_posts()) : while ($loop -> have_posts()) : $loop->the_post(); ?>
       <?php if($i < 2){ ?>
-      <div class="gc-half room rm1">
+      <div class="gc-half room rm1" data-parallax-container="true">
         <?php if(get_field('room_image')){  ?>
           <img src="<?php the_field("room_image"); ?>" alt="<?php the_title();?>" data-parallax="true" aria-hidden="true" data-direction="slide-right" data-shown="false"/>
         <?php } ?>
@@ -81,8 +81,10 @@ get_header(); ?>
           <?php the_excerpt(); ?>
           <a class="cs-btn-reset cs-btn-read-more" href="<?php echo get_permalink(); ?>">READ MORE</a>
         </div>
-      </div><?php $i++; ?><?php } else { ?>
-      <div class="gc-half room rm2">
+        <?php $i++; ?>
+      </div>
+      <?php } else { ?>
+      <div class="gc-half room rm2" data-parallax-container="true">
         <div class="room-content" data-parallax="true" aria-hidden="true" data-direction="slide-right" data-shown="false">
           <h3 class="room-name underline">
             <?php the_title(); ?>
@@ -94,7 +96,13 @@ get_header(); ?>
           <img src="<?php the_field("room_image"); ?>" alt="<?php the_title();?>" data-parallax="true" aria-hidden="true" data-direction="slide-left" data-shown="false"/>
         <?php } ?>
       </div>
-      <?php $i = 1; ?><?php } ?><?php endwhile; else : ?>Oops.... Looks like some content may still be locked in a room. Try Searching here for it.<?php get_search_form(); ?><?php endif; ?><?php wp_reset_query(); ?>
+      <?php $i = 1; ?>
+      <?php } ?>
+      <?php endwhile; else : ?>
+        Oops.... Looks like some content may still be locked in a room. Try Searching here for it.
+      <?php get_search_form(); ?>
+      <?php endif; ?>
+      <?php wp_reset_query(); ?>
     </div>
   </section>
   <section id="hp-faqs">
