@@ -3,66 +3,74 @@
 */
 get_header(); ?>
 <div id="hp-container">
-  <div id="hp-overlay-wrapper" class="gc-fh">
-    <div class="hp-overlay-inner">
-      <button class="btn close-btn" aria-label="Close Overlay" tabindex="-1">X</button>
-      <?php $i = 1;
-        $args = array('post_type'=>'overlay', 'posts_per_page'=> -1, 'order'=>'ASC' );
-        $loop = new WP_Query($args);
-        $time = date(Ymd);
-        $time = (int)$time; ?>
-        <?php 
-          if($loop -> have_posts()) : while ($loop -> have_posts()) : $loop->the_post();
-          $startdate = get_field('start_date');
-          $enddate = get_field('end_date');
-            if(($time >= $startdate) && ($time <= $enddate)) { ?>
-            <img src="<?php the_post_thumbnail_url('full'); ?>"/>
-            <?php $i++; ?>
-            <?php } ?>
-          <?php endwhile; else : ?>
-            Oops.... Looks like our content may still be locked in a room. Try Searching here for it.
-            <?php get_search_form(); ?>
-        <?php endif; ?>
-        <?php wp_reset_query(); ?>
+    <div id="hp-overlay-wrapper" class="gc-fh">
+        <div class="hp-overlay-inner">
+          <button class="btn close-btn" aria-label="Close Overlay" tabindex="-1">
+            X
+          </button>
+          <?php $i = 1;
+            $args = array('post_type'=>'overlay', 'posts_per_page'=> -1, 'order'=>'ASC' );
+            $loop = new WP_Query($args);
+            $time = date(Ymd);
+            $time = (int)$time; ?>
+            <?php 
+              if($loop -> have_posts()) : while ($loop -> have_posts()) : $loop->the_post();
+              $startdate = get_field('start_date');
+              $enddate = get_field('end_date');
+                if(($time >= $startdate) && ($time <= $enddate)) { ?>
+                <img src="<?php the_post_thumbnail_url('full'); ?>"/>
+                <?php $i++; ?>
+                <?php } ?>
+              <?php endwhile; else : ?>
+                Oops.... Looks like our content may still be locked in a room. Try Searching here for it.
+                <?php get_search_form(); ?>
+            <?php endif; ?>
+            <?php wp_reset_query(); ?>
+        </div>
     </div>
-  </div>
-  <div id="hp-head-image" class="gc-fh">
-    <div class="hp-img-overlay gc-half gc-ace">
-      <div class="hp-button-wrapper gc-thirds gc-jcc gc-aic">
-        <button id="hp-btn-learn" alt="About Us" class="gc gc-jcc gc-aic cs-btn-reset cs-btn-learn-more"><span>LEARN</span>MORE</button>
-        <a href="https://bookeo.com/lockedincayman" alt="Book Now" target="_blank" class="gc gc-jcc gc-aic cs-btn book-now"> 
-          <img src="<?php bloginfo('template_url'); ?>/img/book-now.png" alt="Book Now"/>
-        </a>
-      <button class="gc gc-jcc gc-aic cs-btn-reset cs-btn-watch-video"><span>WATCH</span>MORE</button>
+    <div id="hp-head-image" class="gc-fh">
+      <div class="hp-img-overlay gc-half gc-ace">
+          <div class="hp-button-wrapper gc-thirds gc-jcc gc-aic">
+              <button id="hp-btn-learn" alt="About Us" class="gc gc-jcc gc-aic cs-btn-reset cs-btn-learn-more">
+                <span>LEARN</span>MORE
+              </button>
+              <a href="https://bookeo.com/lockedincayman" alt="Book Now" target="_blank" class="gc gc-jcc gc-aic cs-btn book-now"> 
+                <img src="<?php bloginfo('template_url'); ?>/img/book-now.png" alt="Book Now"/>
+              </a>
+              <button class="gc gc-jcc gc-aic cs-btn-reset cs-btn-watch-video">
+                <span>WATCH</span>MORE
+              </button>
+          </div>
+          <a class="cs-tripadvisor-btn gc gc-jce gc-aic" href="http://www.tripadvisor.com/Attraction_Review-g147366-d9603779-Reviews-Locked_Inn_Cayman-George_Town_Grand_Cayman_Cayman_Islands.html" target="_blank" class="btn advisor-btn">
+            <img src="http://www.tripadvisor.com/img/cdsi/img2/branding/tripadvisor_sticker_logo_88x55-18961-2.png"/>
+          </a>
       </div>
-      <a class="cs-tripadvisor-btn gc gc-jce gc-aic" href="http://www.tripadvisor.com/Attraction_Review-g147366-d9603779-Reviews-Locked_Inn_Cayman-George_Town_Grand_Cayman_Cayman_Islands.html" target="_blank" class="btn advisor-btn">
-        <img src="http://www.tripadvisor.com/img/cdsi/img2/branding/tripadvisor_sticker_logo_88x55-18961-2.png"/>
-      </a>
     </div>
-  </div>
-  <div id="head-video-outer" class="lightbox-wrapper">
-    <div id="head-video-inner" class="lightbox-inner">
-      <video id="lockedinn-vid" controls>
-        <source src="<?php bloginfo('template_url'); ?>/vids/login.mp4" type="video/mp4">
-        Your browser does not support the video.
-      </video>
+    <div id="head-video-outer" class="lightbox-wrapper">
+        <div id="head-video-inner" class="lightbox-inner">
+            <video id="lockedinn-vid" controls>
+              <source src="<?php bloginfo('template_url'); ?>/vids/login.mp4" type="video/mp4">
+              Your browser does not support the video.
+            </video>
+        </div>
     </div>
-  </div>
-  <section id="hp-about" data-parallax-container="true">
-    <div class="parallax" aria-hidden="true" data-parallax="true" data-direction="slide-down" data-shown="false">
-      <h2 class="hp-header underline">WELCOME TO LOCKED INN</h2>
-      <p>
-        Welcome to our charming little inn nestled in the Cayman Islands. We hope you enjoy your stay. 
-        <br/>
-        If you're looking for cozy and quiet, look elsewhere. This inn is different than any others you've visited...
-      </p>
-    </div>
-  </section>
-  <section id="hp-welcome" data-parallax-container="true">
-    <img data-parallax="true" data-direction="slide-up" data-shown="false" aria-hidden="true" src="<?php bloginfo('template_url'); ?>/img/welcome.jpg" alt="What is an escape room? 6 poeple enter a themed room with 45 minutes to find clues and solve puzzles in n attempt to make their way out. Escape into a world of altered reality. Tons of fun as you test your skill. Do you have waht it takesto get out or will you stay Locked Inn?"/>
-  </section>
+    <section id="hp-about" data-parallax-container="true">
+        <div class="parallax" aria-hidden="true" data-parallax="false" data-direction="slide-down" data-shown="false">
+            <h2 class="hp-header underline">WELCOME TO LOCKED INN</h2>
+            <p>
+              Welcome to our charming little inn nestled in the Cayman Islands. We hope you enjoy your stay. 
+              <br/>
+              If you're looking for cozy and quiet, look elsewhere. This inn is different than any others you've visited...
+            </p>
+        </div>
+    </section>
+    <section id="hp-welcome" data-parallax-container="true">
+        <img data-parallax="false" data-direction="slide-up" data-shown="false" aria-hidden="true" src="<?php bloginfo('template_url'); ?>/img/welcome.jpg" alt="What is an escape room? 6 poeple enter a themed room with 45 minutes to find clues and solve puzzles in n attempt to make their way out. Escape into a world of altered reality. Tons of fun as you test your skill. Do you have waht it takesto get out or will you stay Locked Inn?"/>
+    </section>
   <section id="hp-rooms" data-parallax-container="true">
-    <h2 class="hp-header underline" data-parallax="true" data-direction="slide-down" data-shown="false" aria-hidden="true">THE ROOMS</h2>
+    <h2 class="hp-header underline" data-parallax="false" data-direction="slide-down" data-shown="false" aria-hidden="true">
+        THE ROOMS
+    </h2>
     <?php 
       $i = 1;
       $args = array('post_type'=>'rooms','posts_per_page'=> -1, 'orderby'=>'menu_order', 'order'=>'ASC' );
@@ -70,32 +78,32 @@ get_header(); ?>
     ?>
     <?php if($loop -> have_posts()) : while ($loop -> have_posts()) : $loop->the_post(); ?>
       <?php if($i < 2){ ?>
-      <div class="gc-half room rm1" data-parallax-container="true">
-        <?php if(get_field('room_image')){  ?>
-          <img src="<?php the_field("room_image"); ?>" alt="<?php the_title();?>" data-parallax="true" aria-hidden="true" data-direction="slide-right" data-shown="false"/>
-        <?php } ?>
-        <div class="room-content" data-parallax="true" aria-hidden="true" data-direction="slide-left" data-shown="false">
-          <h3 class="room-name underline">
-            <?php the_title(); ?>
-          </h3>
-          <?php the_excerpt(); ?>
-          <a class="cs-btn-reset cs-btn-read-more" href="<?php echo get_permalink(); ?>">READ MORE</a>
-        </div>
-        <?php $i++; ?>
-      </div>
+          <div class="gc-half room rm1" data-parallax-container="true">
+              <?php if(get_field('room_image')){  ?>
+                  <img src="<?php the_field("room_image"); ?>" alt="<?php the_title();?>" data-parallax="false" aria-hidden="true" data-direction="slide-right" data-shown="false"/>
+              <?php } ?>
+                <div class="room-content" data-parallax="false" aria-hidden="true" data-direction="slide-left" data-shown="false">
+                    <h3 class="room-name underline">
+                      <?php the_title(); ?>
+                    </h3>
+                    <?php the_excerpt(); ?>
+                    <a class="cs-btn-reset cs-btn-read-more" href="<?php echo get_permalink(); ?>">READ MORE</a>
+                </div>
+              <?php $i++; ?>
+          </div>
       <?php } else { ?>
-      <div class="gc-half room rm2" data-parallax-container="true">
-        <div class="room-content" data-parallax="true" aria-hidden="true" data-direction="slide-right" data-shown="false">
-          <h3 class="room-name underline">
-            <?php the_title(); ?>
-          </h3>
-          <?php the_excerpt(); ?>
-          <a class="cs-btn-reset cs-btn-read-more" href="<?php echo get_permalink(); ?>">READ MORE</a>
-        </div>
-        <?php if(get_field('room_image')){  ?>
-          <img src="<?php the_field("room_image"); ?>" alt="<?php the_title();?>" data-parallax="true" aria-hidden="true" data-direction="slide-left" data-shown="false"/>
-        <?php } ?>
-      </div>
+          <div class="gc-half room rm2" data-parallax-container="true">
+              <div class="room-content" data-parallax="false" aria-hidden="true" data-direction="slide-right" data-shown="false">
+                  <h3 class="room-name underline">
+                    <?php the_title(); ?>
+                  </h3>
+                  <?php the_excerpt(); ?>
+                  <a class="cs-btn-reset cs-btn-read-more" href="<?php echo get_permalink(); ?>">READ MORE</a>
+              </div>
+              <?php if(get_field('room_image')){  ?>
+                  <img src="<?php the_field("room_image"); ?>" alt="<?php the_title();?>" data-parallax="false" aria-hidden="true" data-direction="slide-left" data-shown="false"/>
+              <?php } ?>
+          </div>
       <?php $i = 1; ?>
       <?php } ?>
       <?php endwhile; else : ?>
@@ -103,13 +111,12 @@ get_header(); ?>
       <?php get_search_form(); ?>
       <?php endif; ?>
       <?php wp_reset_query(); ?>
-    </div>
   </section>
   <section id="hp-faqs">
-    <h2 class="hp-header underline" data-parallax="true" data-direction="slide-down" data-shown="false" aria-hidden="true">FAQS</h2>
-    <p data-parallax="true" data-direction="slide-down" data-shown="false" aria-hidden="true">Get answers to your most frequently asked queries</p>
+    <h2 class="hp-header underline" data-parallax="false" data-direction="slide-down" data-shown="false" aria-hidden="true">FAQS</h2>
+    <p data-parallax="false" data-direction="slide-down" data-shown="false" aria-hidden="true">Get answers to your most frequently asked queries</p>
     <div class="gc-half">
-      <ul class="faq-questions left" data-parallax="true" data-direction="slide-right" data-shown="false" aria-hidden="true">
+      <ul class="faq-questions left" data-parallax="false" data-direction="slide-right" data-shown="false" aria-hidden="true">
         <?php $i = 1;
           $args = array('post_type'=>'faq','posts_per_page'=> -1, 'orderby'=>'menu_order', 'order'=>'ASC' );
           $posts = wp_count_posts('faq')->publish;
@@ -137,7 +144,7 @@ get_header(); ?>
         <?php endif; ?>
         <?php wp_reset_query(); ?>
       </ul>
-      <ul class="faq-questions right" data-parallax="true" data-direction="slide-left" data-shown="false" aria-hidden="true">
+      <ul class="faq-questions right" data-parallax="false" data-direction="slide-left" data-shown="false" aria-hidden="true">
         <?php $i = 1;
           $args = array('post_type'=>'faq','posts_per_page'=> -1, 'orderby'=>'menu_order', 'order'=>'ASC' );
           $posts = wp_count_posts('faq')->publish;
@@ -168,7 +175,7 @@ get_header(); ?>
     </div>
   </section>
   <section id="hp-comments">
-    <h1 class="hp-header underline" data-parallax="true" data-direction="slide-down" data-shown="false" aria-hidden="true">WHAT OTHERS ARE SAYING</h1>
+    <h1 class="hp-header underline" data-parallax="false" data-direction="slide-down" data-shown="false" aria-hidden="true">WHAT OTHERS ARE SAYING</h1>
       <?php 
         $i = 1;
         $args = array('post_type'=>'rumor','posts_per_page'=> -1, 'orderby'=>'menu_order', 'order'=>'ASC' );

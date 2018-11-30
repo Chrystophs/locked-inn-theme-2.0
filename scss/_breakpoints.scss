@@ -1,4 +1,4 @@
-@media (max-width: 1120px) {
+@media (max-width: 1119px) {
   nav {
     overflow: visible;
     .nav-btn {
@@ -52,10 +52,11 @@
       position: absolute;
       top: 0;
       padding: 20px 30px;
-      width: 300px;
-      left: 100%;
+      width: 220px;
+      left: auto;
+      right: 0;
+      z-index: 10;
       background: #2e3539;
-      transition: left 0.5s ease-in-out;
       .menu-item a {
         text-align: left;
 
@@ -65,12 +66,9 @@
         }
       }
     }
-    #menu-main-menu.open {
-      z-index: 10;
-      left: calc(100% - 270px);
-    }
   }
   #hp-head-image {
+    max-width: 100vw;
     background-position: top left;
     .hp-img-overlay.gc-half {
       grid-template-columns: 2fr 1fr;
@@ -96,7 +94,10 @@
     }
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 1023px) {
+  body {
+    width: 100vw;
+  }
   #top .gc-half {
     grid-template-columns: 350px 1fr;
   }
@@ -156,11 +157,15 @@
     }
   }
 }
-@media (max-width: 640px) {
-  header.gc-header {
+@media (max-width: 767px) {
+  header#top.gc-header {
     justify-content: stretch;
+    min-height: 230px;
+    .gc-half {
+      grid-template-columns: 200px 1fr;
+    }
     .gb-header-address {
-      max-width: 220px;
+      max-width: 200px;
       text-align: center;
     }
     #gb-logo {
@@ -194,7 +199,7 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 639px) {
   #hp-head-image {
     max-height: 300px;
 
@@ -241,12 +246,9 @@
   }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 479px) {
   header.gc-header #gb-logo .small-logo {
     height: 80px;
-  }
-  header.gc-header .gb-header-address {
-    display: none;
   }
   #hp-head-image {
     height: 220px;

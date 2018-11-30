@@ -8,7 +8,7 @@
 <head>
   <title><?php wp_title(''); ?></title>
   <meta charset="<?php bloginfo( 'charset' ) ?>">
-  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
   <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
   <!-- Sheet Styles-->
   <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/css/style.css">
@@ -34,7 +34,9 @@
 <body>
   <header id="top" class="gc-header">
     <div class="gc-half">
-      <a class="gb-header-address" href="<?php echo get_option('home'); ?>/contact-us/">18 FORT STREET, GRAND CAYMAN</a>
+      <a class="gb-header-address" href="<?php echo get_option('home'); ?>/contact-us/">
+        18 FORT STREET, GRAND CAYMAN
+      </a>
       <nav id="gb-top-nav">
         <button class="cs-btn-reset nav-btn">
           <span class="menu-line line1"></span>
@@ -51,8 +53,8 @@
         ?>
       </nav>
       <a id="gb-logo" href="<?php echo get_option('home'); ?>" alt="<?php the_title(); ?>">
-        <img class="large-logo" src="<?php bloginfo('template_url'); ?>/img/logo-big.png">
-        <img class="small-logo" src="<?php bloginfo('template_url'); ?>/img/logo2.png">
+        <img class="large-logo" src="<?php bloginfo('template_url'); ?>/img/logo-big.png" />
+        <img class="small-logo" src="<?php bloginfo('template_url'); ?>/img/logo2.png" />
       </a> 
     </div>
   </header>

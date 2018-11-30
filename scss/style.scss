@@ -10,9 +10,13 @@
 * {
   box-sizing: border-box;
 }
+html {
+  padding: env(safe-area-inset);
+}
 body {
   font-family: "Open Sans", sans-serif;
   font-size: 1em;
+  background: #fff;
 }
 .accessible-hidden {
   width: 0 !important;
@@ -22,6 +26,9 @@ body {
   margin: 0 !important;
   border: 0 !important;
   overflow: hidden !important;
+}
+#jp-relatedposts {
+  display: none !important;
 }
 #hp-overlay-wrapper {
   display: none;
@@ -119,6 +126,7 @@ nav {
 svg {
   max-height: 30px;
   max-width: 30px;
+  overflow: visible;
 }
 .underline {
   position: relative;

@@ -2,26 +2,31 @@ var csParallax = {
   /* PROPERTIES */
   Setup: function() {
     /* Find all Parallax Items */
-    $("[data-parallax=true]").each(function(k, v) {
-      $(v).attr(
-        "data-parallax-offset",
-        Math.ceil(
-          $(v)
-            .parent()
-            .offset().top
-        )
-      );
-    });
+    if ($(window).width() >= 1024) {
+      $("[data-parallax=false]").each(function(k, v) {
+        $(v)
+          .attr("data-parallax", "true")
+          .attr(
+            "data-parallax-offset",
+            Math.ceil(
+              $(v)
+                .parent()
+                .offset().top
+            )
+          );
+      });
+    }
   },
   Scroll: function() {
     var wW = $(window).width(),
       wH = $(window).height(),
-      wS = $(window).scrollTop();
+      wS = $(window).scrollTop(),
+      offset;
 
     if (wW > 1050) {
-      var offset = wS + wH / 1.5;
+      offset = wS + wH / 1.2;
     } else if (wW >= 768) {
-      var offset = wS + wH / 1.15;
+      offset = wS + wH / 1.01;
     } else {
       $("[data-parallax=true").each(function(k, v) {
         $(v).attr("data-parallax", "false");

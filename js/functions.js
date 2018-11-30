@@ -24,6 +24,7 @@ var ChrisTemplate = {
     var _this = this;
 
     this.Header();
+
     csParallax.Setup();
     csParallax.Scroll();
 
@@ -37,7 +38,9 @@ var ChrisTemplate = {
     $(window).on("scroll", function() {
       csParallax.Scroll();
     });
-    $(window).on("resize", function() {});
+    $(window).on("resize", function() {
+      csParralax.Setup();
+    });
   },
   WindowScroll: function() {},
   WindowResize: function() {
@@ -51,6 +54,7 @@ var ChrisTemplate = {
     }
   },
   Header: function() {
+    /* Check Device */
     /* Navigation */
     $(".menu-item > a")
       .unbind()
