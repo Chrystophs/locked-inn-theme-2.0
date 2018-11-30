@@ -819,7 +819,7 @@ footer {
       padding: 20px 30px;
       width: 220px;
       left: auto;
-      right: 0;
+      right: -30px;
       z-index: 10;
       background: #2e3539; }
       nav #menu-main-menu .menu-item a {
@@ -917,13 +917,21 @@ footer {
   #hp-head-image {
     max-height: 300px; }
     #hp-head-image .hp-img-overlay.gc-half {
+      position: relative;
       grid-template-areas: "center";
       grid-template-columns: 1fr;
       padding: 0 20px 10px; }
       #hp-head-image .hp-img-overlay.gc-half .book-now img {
         height: 100px; }
   .cs-tripadvisor-btn {
-    display: none !important; }
+    position: absolute;
+    bottom: calc(100% + 40px);
+    right: 10px;
+    height: 55px;
+    width: 85px; }
+    .cs-tripadvisor-btn img {
+      height: 40px;
+      width: auto; }
   #sp-container .sp-article .sp-title {
     font-size: 1.8em; }
   footer .gb-footer-info.gc-thirds {
@@ -947,11 +955,16 @@ footer {
   #hp-head-image {
     height: 220px;
     background-position: -30px 0; }
+    #hp-head-image .hp-img-overlay.gc-half .hp-button-wrapper.gc-thirds {
+      grid-template-columns: 1fr 1fr;
+      justify-content: right; }
     #hp-head-image .hp-img-overlay.gc-half .book-now img {
       height: 80px; }
     #hp-head-image .hp-img-overlay.gc-half .cs-btn-learn-more {
       height: 50px;
       width: 80px; }
+    #hp-head-image .hp-img-overlay.gc-half .cs-btn-watch-video {
+      display: none; }
   #top .gc-half {
     grid-template-columns: 1fr 1fr; }
   #hp-about {

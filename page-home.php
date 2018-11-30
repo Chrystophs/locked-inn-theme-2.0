@@ -183,7 +183,7 @@ get_header(); ?>
         $loop = new WP_Query($args); 
       ?>
     <div class="hp-slide-wrapper">
-      <div id="hp-comment-slider" class="gb-slider" data-slideshow="true" data-playing="false" data-parallax="true" data-direction="slide-up" data-shown="false" aria-hidden="true">
+      <div id="hp-comment-slider" class="gb-slider" data-slideshow="true" data-playing="false" data-parallax="false" data-direction="slide-up" data-shown="false" aria-hidden="true">
           <?php do_action( 'wprev_tripadvisor_plugin_action', 1 ); ?>
     </div>
     </div>
