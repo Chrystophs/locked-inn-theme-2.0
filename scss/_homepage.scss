@@ -28,11 +28,6 @@
   display: grid;
   justify-content: center;
   background-color: #fff;
-  /*
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-    background-image: url(../img/welcome.jpg); */
   img {
     height: auto;
     width: 100%;
@@ -142,13 +137,13 @@
   .faq-questions {
     list-style: none;
 
-    .question {
+    li.question {
       position: relative;
       font-weight: bold;
       font-size: 1.1em;
       padding: 0 0 0 30px;
       margin-top: 20px;
-      cursor: pointer;
+      cursor: pointer !important;
 
       ul {
         margin: 10px 0;
