@@ -187,15 +187,20 @@
 
     p {
       margin: 5px 0;
+      text-align: center;
 
       input {
         padding: 5px 10px;
         font-size: 0.8em;
+        text-align: left;
+        border: 1px solid #333;
       }
 
       textarea {
         padding: 4px 10px;
         font-size: 0.8em;
+        text-align: left;
+        border: 1px solid #333;
       }
     }
 

@@ -253,6 +253,14 @@
       }
     }
   }
+  .contact-thirds.gc-thirds {
+    grid-template-columns: 1fr;
+    grid-template-areas: "left" "center" "right";
+  }
+  #sp-contact .contact-form.gc-half {
+    grid-template-columns: 1fr;
+    grid-template-areas: "left" "right";
+  }
 }
 
 @media (max-width: 479px) {
