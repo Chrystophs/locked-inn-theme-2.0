@@ -97,7 +97,8 @@ body {
       margin: 0 auto; }
     .lightbox-wrapper .lightbox-inner img {
       max-width: 100%;
-      height: auto; }
+      height: auto;
+      margin: 0 auto; }
 
 @media (max-width: 1023px) {
   .lightbox-wrapper .lightbox-inner {

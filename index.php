@@ -23,7 +23,7 @@ get_header();
         </div>
        </section>
      </article>
-     <h2 class="sp-sub-title underline" data-parallax="false" aria-hidden="true" data-direction="slide-down" data-shown="false">Related Rooms<h2>
+     <h2 class="sp-sub-title underline" data-parallax="true" aria-hidden="true" data-direction="slide-down" data-shown="false">Related Rooms<h2>
      <div id="sp-related-rooms">
       <?php 
           $currentTitle = get_the_title();
@@ -33,7 +33,7 @@ get_header();
         ?>
         <?php if($loop -> have_posts()) : while ($loop -> have_posts()) : $loop->the_post(); ?>
           <?php if($currentTitle !== get_the_title()) {?>
-              <div class="sp-room-tile" data-parallax="false" aria-hidden="true" data-direction="slide-up" data-shown="false" data-delay="<?php echo $delay; ?>">
+              <div class="sp-room-tile" data-parallax="true" aria-hidden="true" data-direction="slide-up" data-shown="false" data-delay="<?php echo $delay; ?>">
               <a class="cs-btn-reset" href="<?php echo get_permalink(); ?>">
                 <h3 class="room-name underline">
                   <?php the_title(); ?>

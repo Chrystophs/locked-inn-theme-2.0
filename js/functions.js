@@ -16,7 +16,6 @@ var ChrisTemplate = {
     right: 39,
     down: 40
   },
-  MobileView: false,
 
   // METHODS
   Init: function() {

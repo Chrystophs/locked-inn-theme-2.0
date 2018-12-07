@@ -4,20 +4,18 @@ var csParallax = {
     var _this = this;
     /* Find all Parallax Items */
     //if ($(window).width() >= 1024) {
-    $("[data-parallax=false]").each(function(k, v) {
-      $(v)
-        .attr("data-parallax", "true")
-        .attr(
-          "data-parallax-offset",
-          Math.ceil(
-            $(v)
-              .parent()
-              .offset().top
-          )
-        );
+    $("[data-parallax=true]").each(function(k, v) {
+      $(v).attr(
+        "data-parallax-offset",
+        Math.ceil(
+          $(v)
+            .parent()
+            .offset().top
+        )
+      );
     });
     //}
-    _this.Scroll();
+    this.Scroll();
     $(window).on("scroll", function() {
       _this.Scroll();
     });
@@ -31,7 +29,7 @@ var csParallax = {
     if (wW > 1050) {
       offset = wS + wH / 1.2;
     } else {
-      offset = wS + wH / 1.01;
+      offset = wS + wH / 1.12;
     }
 
     /*else {

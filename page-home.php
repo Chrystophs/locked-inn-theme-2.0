@@ -55,7 +55,7 @@ get_header(); ?>
         </div>
     </div>
     <section id="hp-about" data-parallax-container="true">
-        <div class="parallax" aria-hidden="true" data-parallax="false" data-direction="slide-down" data-shown="false">
+        <div class="parallax" aria-hidden="true" data-parallax="true" data-direction="slide-down" data-shown="false">
             <h2 class="hp-header underline">WELCOME TO LOCKED INN</h2>
             <p>
               Welcome to our charming little inn nestled in the Cayman Islands. We hope you enjoy your stay. 
@@ -65,10 +65,10 @@ get_header(); ?>
         </div>
     </section>
     <section id="hp-welcome" data-parallax-container="true">
-        <img data-parallax="false" data-direction="slide-up" data-shown="false" aria-hidden="true" src="<?php bloginfo('template_url'); ?>/img/welcome.jpg" alt="What is an escape room? 6 poeple enter a themed room with 45 minutes to find clues and solve puzzles in n attempt to make their way out. Escape into a world of altered reality. Tons of fun as you test your skill. Do you have waht it takesto get out or will you stay Locked Inn?"/>
+        <img data-parallax="true" data-direction="slide-up" data-shown="false" aria-hidden="true" src="<?php bloginfo('template_url'); ?>/img/welcome.jpg" alt="What is an escape room? 6 poeple enter a themed room with 45 minutes to find clues and solve puzzles in n attempt to make their way out. Escape into a world of altered reality. Tons of fun as you test your skill. Do you have waht it takesto get out or will you stay Locked Inn?"/>
     </section>
   <section id="hp-rooms" data-parallax-container="true">
-    <h2 class="hp-header underline" data-parallax="false" data-direction="slide-down" data-shown="false" aria-hidden="true">
+    <h2 class="hp-header underline" data-parallax="true" data-direction="slide-down" data-shown="false" aria-hidden="true">
         THE ROOMS
     </h2>
     <?php 
@@ -80,9 +80,9 @@ get_header(); ?>
       <?php if($i < 2){ ?>
           <div class="gc-half room rm1" data-parallax-container="true">
               <?php if(get_field('room_image')){  ?>
-                  <img src="<?php the_field("room_image"); ?>" alt="<?php the_title();?>" data-parallax="false" aria-hidden="true" data-direction="slide-right" data-shown="false"/>
+                  <img src="<?php the_field("room_image"); ?>" alt="<?php the_title();?>" data-parallax="true" aria-hidden="true" data-direction="slide-right" data-shown="false"/>
               <?php } ?>
-                <div class="room-content" data-parallax="false" aria-hidden="true" data-direction="slide-left" data-shown="false">
+                <div class="room-content" data-parallax="true" aria-hidden="true" data-direction="slide-left" data-shown="false">
                     <h3 class="room-name underline">
                       <?php the_title(); ?>
                     </h3>
@@ -93,7 +93,7 @@ get_header(); ?>
           </div>
       <?php } else { ?>
           <div class="gc-half room rm2" data-parallax-container="true">
-              <div class="room-content" data-parallax="false" aria-hidden="true" data-direction="slide-right" data-shown="false">
+              <div class="room-content" data-parallax="true" aria-hidden="true" data-direction="slide-right" data-shown="false">
                   <h3 class="room-name underline">
                     <?php the_title(); ?>
                   </h3>
@@ -101,7 +101,7 @@ get_header(); ?>
                   <a class="cs-btn-reset cs-btn-read-more" href="<?php echo get_permalink(); ?>">READ MORE</a>
               </div>
               <?php if(get_field('room_image')){  ?>
-                  <img src="<?php the_field("room_image"); ?>" alt="<?php the_title();?>" data-parallax="false" aria-hidden="true" data-direction="slide-left" data-shown="false"/>
+                  <img src="<?php the_field("room_image"); ?>" alt="<?php the_title();?>" data-parallax="true" aria-hidden="true" data-direction="slide-left" data-shown="false"/>
               <?php } ?>
           </div>
       <?php $i = 1; ?>
@@ -113,10 +113,10 @@ get_header(); ?>
       <?php wp_reset_query(); ?>
   </section>
   <section id="hp-faqs">
-    <h2 class="hp-header underline" data-parallax="false" data-direction="slide-down" data-shown="false" aria-hidden="true">FAQS</h2>
-    <p data-parallax="false" data-direction="slide-down" data-shown="false" aria-hidden="true">Get answers to your most frequently asked queries</p>
+    <h2 class="hp-header underline" data-parallax="true" data-direction="slide-down" data-shown="false" aria-hidden="true">FAQS</h2>
+    <p data-parallax="true" data-direction="slide-down" data-shown="false" aria-hidden="true">Get answers to your most frequently asked queries</p>
     <div class="gc-half">
-      <ul class="faq-questions left" data-parallax="false" data-direction="slide-right" data-shown="false" aria-hidden="true">
+      <ul class="faq-questions left" data-parallax="true" data-direction="slide-right" data-shown="false" aria-hidden="true">
         <?php $i = 1;
           $args = array('post_type'=>'faq','posts_per_page'=> -1, 'orderby'=>'menu_order', 'order'=>'ASC' );
           $posts = wp_count_posts('faq')->publish;
@@ -144,7 +144,7 @@ get_header(); ?>
         <?php endif; ?>
         <?php wp_reset_query(); ?>
       </ul>
-      <ul class="faq-questions right" data-parallax="false" data-direction="slide-left" data-shown="false" aria-hidden="true">
+      <ul class="faq-questions right" data-parallax="true" data-direction="slide-left" data-shown="false" aria-hidden="true">
         <?php $i = 1;
           $args = array('post_type'=>'faq','posts_per_page'=> -1, 'orderby'=>'menu_order', 'order'=>'ASC' );
           $posts = wp_count_posts('faq')->publish;
@@ -175,7 +175,7 @@ get_header(); ?>
     </div>
   </section>
   <section id="hp-comments">
-    <h1 class="hp-header underline" data-parallax="false" data-direction="slide-down" data-shown="false" aria-hidden="true">WHAT OTHERS ARE SAYING</h1>
+    <h1 class="hp-header underline" data-parallax="true" data-direction="slide-down" data-shown="false" aria-hidden="true">WHAT OTHERS ARE SAYING</h1>
       <?php 
         $i = 1;
         $args = array('post_type'=>'rumor','posts_per_page'=> -1, 'orderby'=>'menu_order', 'order'=>'ASC' );
@@ -183,7 +183,7 @@ get_header(); ?>
         $loop = new WP_Query($args); 
       ?>
     <div class="hp-slide-wrapper">
-      <div id="hp-comment-slider" class="gb-slider" data-slideshow="true" data-playing="false" data-parallax="false" data-direction="slide-up" data-shown="false" aria-hidden="true">
+      <div id="hp-comment-slider" class="gb-slider" data-slideshow="true" data-playing="false" data-parallax="true" data-direction="slide-up" data-shown="false" aria-hidden="true">
           <?php do_action( 'wprev_tripadvisor_plugin_action', 1 ); ?>
     </div>
     </div>
