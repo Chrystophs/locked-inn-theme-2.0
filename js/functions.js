@@ -24,9 +24,7 @@ var ChrisTemplate = {
     var _this = this;
 
     this.Header();
-
     csParallax.Setup();
-    csParallax.Scroll();
 
     if ($("#hp-container").length > 0) {
       this.Homepage();
@@ -35,22 +33,39 @@ var ChrisTemplate = {
       this.ContactUs();
     }
 
-    $(window).on("scroll", function() {
-      csParallax.Scroll();
-    });
-    $(window).on("resize", function() {
-      csParralax.Setup();
+    $(document).on("ready", function() {});
+    $(window).on("scroll", function() {});
+    $(window).on("resize", function() {});
+    $(window).on("load", function() {
+      _this.WindowLoad();
     });
   },
   WindowScroll: function() {},
   WindowResize: function() {
-    var wW = $(widnow).width();
+    var wW = $(window).width();
     if (wW > 1120) {
       if ($("#menu-main-menu").attr("aria-hidden") == "true") {
         $("#menu-main-menu")
           .fadeIn()
           .attr("Aria-hidden", "false");
       }
+    }
+  },
+  WindowLoad: function() {
+    if ($(".hp-overlay-inner img").length > 0) {
+      $("#hp-overlay-wrapper")
+        .addClass("open")
+        .fadeIn()
+        .attr("aria-hidden", "false");
+      $("#hp-overlay-btn-close").click(function(e) {
+        e.preventDefault();
+        if ($("#hp-overlay-wrapper").hasClass("open")) {
+          $("#hp-overlay-wrapper")
+            .removeClass("open")
+            .fadeOut()
+            .attr("aria-hidden", "true");
+        }
+      });
     }
   },
   Header: function() {

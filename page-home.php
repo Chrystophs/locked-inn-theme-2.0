@@ -3,15 +3,15 @@
 */
 get_header(); ?>
 <div id="hp-container">
-    <div id="hp-overlay-wrapper" class="gc-fh">
-        <div class="hp-overlay-inner">
-          <button class="btn close-btn" aria-label="Close Overlay" tabindex="-1">
+    <div id="hp-overlay-wrapper" class="gc-fh lightbox-wrapper">
+        <div class="hp-overlay-inner lightbox-inner">
+          <button id="hp-overlay-btn-close" class="cs-btn-reset close-btn" aria-label="Close Overlay" tabindex="-1">
             X
           </button>
           <?php $i = 1;
             $args = array('post_type'=>'overlay', 'posts_per_page'=> -1, 'order'=>'ASC' );
             $loop = new WP_Query($args);
-            $time = date(Ymd);
+            $time = date("dmY");
             $time = (int)$time; ?>
             <?php 
               if($loop -> have_posts()) : while ($loop -> have_posts()) : $loop->the_post();

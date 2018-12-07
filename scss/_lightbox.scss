@@ -16,16 +16,37 @@
     display: flex;
     padding: 40px;
     margin: 50px;
-    height: calc(100% - 100px);
+    height: auto;
     width: auto;
     background: #333;
     border-radius: 10px;
 
+    .close-btn {
+      position: absolute;
+      cursor: pointer;
+      top: 5px;
+      right: 5px;
+      padding: 0 5px;
+      font-size: 1.5em;
+      color: #fff;
+      font-weight: bold;
+    }
     video {
       position: relative;
       width: auto;
       height: 100%;
       margin: 0 auto;
     }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+}
+
+@media (max-width: 1023px) {
+  .lightbox-wrapper .lightbox-inner {
+    margin: 15px;
   }
 }
