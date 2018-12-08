@@ -3,7 +3,6 @@ var csParallax = {
   Setup: function() {
     var _this = this;
     /* Find all Parallax Items */
-    //if ($(window).width() >= 1024) {
     $("[data-parallax=true]").each(function(k, v) {
       $(v).attr(
         "data-parallax-offset",
@@ -14,7 +13,6 @@ var csParallax = {
         )
       );
     });
-    //}
     this.Scroll();
     $(window).on("scroll", function() {
       _this.Scroll();
@@ -31,12 +29,6 @@ var csParallax = {
     } else {
       offset = wS + wH / 1.12;
     }
-
-    /*else {
-      $("[data-parallax=true").each(function(k, v) {
-        $(v).attr("data-parallax", "false");
-      });
-    }*/
 
     $("[data-parallax=true]").each(function(k, v) {
       if (offset >= $(v).data("parallax-offset")) {
