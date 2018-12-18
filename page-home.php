@@ -29,7 +29,7 @@ get_header(); ?>
         </div>
     </div>
     <div id="hp-head-image" class="gc-fh">
-      <div class="hp-img-overlay gc-half gc-ace">
+      <div class="hp-img-overlay gc-ace">
           <div class="hp-button-wrapper gc-thirds gc-jcc gc-aic">
               <button id="hp-btn-learn" alt="About Us" class="gc gc-jcc gc-aic cs-btn-reset cs-btn-learn-more">
                 <span>LEARN</span>MORE
@@ -40,10 +40,13 @@ get_header(); ?>
               <button class="gc gc-jcc gc-aic cs-btn-reset cs-btn-watch-video">
                 <span>WATCH</span>MORE
               </button>
+              <a href="https://bookeo.com/lockedincayman/buyvoucher " alt="Buy a gift card" target="_blank" class="gc gc-jcc gc-aic cs-btn gift-card"> 
+                <img src="<?php bloginfo('template_url'); ?>/img/gift-card.png" alt="Buy a gift card"/>
+              </a>
+              <a class="cs-tripadvisor-btn gc gc-jce gc-aic" href="http://www.tripadvisor.com/Attraction_Review-g147366-d9603779-Reviews-Locked_Inn_Cayman-George_Town_Grand_Cayman_Cayman_Islands.html" target="_blank" class="btn advisor-btn">
+                <img src="http://www.tripadvisor.com/img/cdsi/img2/branding/tripadvisor_sticker_logo_88x55-18961-2.png"/>
+              </a>
           </div>
-          <a class="cs-tripadvisor-btn gc gc-jce gc-aic" href="http://www.tripadvisor.com/Attraction_Review-g147366-d9603779-Reviews-Locked_Inn_Cayman-George_Town_Grand_Cayman_Cayman_Islands.html" target="_blank" class="btn advisor-btn">
-            <img src="http://www.tripadvisor.com/img/cdsi/img2/branding/tripadvisor_sticker_logo_88x55-18961-2.png"/>
-          </a>
       </div>
     </div>
     <div id="head-video-outer" class="lightbox-wrapper">

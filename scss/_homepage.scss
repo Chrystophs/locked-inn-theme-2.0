@@ -17,12 +17,22 @@
   background-size: cover;
   background-position: center;
   background-image: url(../img/banner.jpg);
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 .hp-img-overlay {
   padding: 0 30px 25px;
 }
+.hp-img-overlay {
+  display: grid;
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 .hp-button-wrapper {
-  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-columns: 1fr 2fr 1fr 2fr 1fr;
 }
 #hp-welcome {
   display: grid;

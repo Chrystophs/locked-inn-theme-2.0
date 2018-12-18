@@ -1,76 +1,82 @@
 //**** Buttons Group ****//
 .cs-btn-reset {
-    display: grid;
-    position: relative;
-    border-radius: 0;
-    padding: 0;
-    margin: 0;
-    border: 0 solid transparent;
-    text-decoration: none;
-    background-color: transparent;
-    color: inherit;
-    overflow: visible;
+  display: grid;
+  position: relative;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  border: 0 solid transparent;
+  text-decoration: none;
+  background-color: transparent;
+  color: inherit;
+  overflow: visible;
+}
+.gift-card img {
+  max-height: 182px;
+  max-width: 181px;
 }
 .cs-btn-learn-more {
-    display: grid;
-    align-content: center;
-    width: 150px;
-    height: 83px;
-    color: #fff;
-    font-size: 2em;
-    font-weight: 300;
-    font-family: 'Yanone Kaffeesatz', sans-serif;
-    text-align: center;
-    border-radius: 10px;
-    background-color: #515652;
-    line-height: 1;
+  display: grid;
+  align-content: center;
+  width: 150px;
+  height: 83px;
+  color: #fff;
+  font-size: 2em;
+  font-weight: 300;
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  text-align: center;
+  border-radius: 10px;
+  background-color: #515652;
+  line-height: 1;
 
-    span {
-        font-size: 0.8em;
-    }
+  span {
+    font-size: 0.8em;
+  }
 }
 .cs-btn-watch-video {
-    display: grid;
-    align-content: center;
-    width: 150px;
-    height: 83px;
-    color: #fff;
-    font-size: 2em;
-    font-weight: 300;
-    text-align: center;
-    font-family: 'Yanone Kaffeesatz', sans-serif;
-    border-radius: 10px;
-    background-color: #515652;
-    line-height: 1;
+  display: grid;
+  align-content: center;
+  width: 150px;
+  height: 83px;
+  color: #fff;
+  font-size: 2em;
+  font-weight: 300;
+  text-align: center;
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  border-radius: 10px;
+  background-color: #515652;
+  line-height: 1;
 
-    span {
-        font-size: 0.8em;
-    }
+  span {
+    font-size: 0.8em;
+  }
 }
 .cs-tripadvisor-btn {
-    display: grid;
-    height: 67px;
-    width: 114px;
-    margin: auto 0;
-    justify-content: center;
-    align-content: center;
-    justify-self: end;
-    border-radius: 5px;
-    background: #FFF;
+  display: grid;
+  height: 67px;
+  width: 114px;
+  margin: auto 0;
+  justify-content: center;
+  align-content: center;
+  justify-self: end;
+  border-radius: 5px;
+  background: #fff;
 }
 .cs-btn-read-more {
-    padding: 10px 20px;
-    color: #dd9933;
-    border: 1px solid #dd9933;
-    margin: 20px auto 12px;
-    font-family: Open Sans;
-    font-weight: 700;
-    font-size: 0.9em;
-    letter-spacing: 0.15em;
-    background: transparent;
-    transition: all 0.5s ease-in-out;
+  padding: 10px 20px;
+  color: #dd9933;
+  border: 1px solid #dd9933;
+  margin: 20px auto 12px;
+  font-family: Open Sans;
+  font-weight: 700;
+  font-size: 0.9em;
+  letter-spacing: 0.15em;
+  background: transparent;
+  transition: all 0.5s ease-in-out;
 
-    &:hover, &:focus {
-        transform: scale(1.2, 1.2);
-    }
+  &:hover,
+  &:focus {
+    transform: scale(1.2, 1.2);
+  }
 }

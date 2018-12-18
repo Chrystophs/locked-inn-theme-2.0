@@ -6,9 +6,6 @@
  ?><!DOCTYPE html> 
 <html <?php language_attributes(); ?> lang="en" class="no-js">
 <head>
-  <title><?php wp_title(''); ?></title>
-  <meta charset="<?php bloginfo( 'charset' ) ?>">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0 viewport-fit=cover">
   <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
   <!-- Sheet Styles-->
   <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/css/style.css">

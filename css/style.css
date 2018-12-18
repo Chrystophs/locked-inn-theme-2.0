@@ -68,17 +68,19 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
   z-index: 5000;
+  box-sizing: border-box;
   background: rgba(0, 0, 0, 0.5); }
   .lightbox-wrapper .lightbox-inner {
     position: relative;
     display: flex;
     padding: 40px;
     margin: 50px;
-    height: auto;
-    width: auto;
+    height: calc(100% - 100px);
+    width: calc(100% - 100px);
+    box-sizing: border-box;
     background: #333;
     border-radius: 10px; }
     .lightbox-wrapper .lightbox-inner .close-btn {
@@ -92,8 +94,10 @@ body {
       font-weight: bold; }
     .lightbox-wrapper .lightbox-inner video {
       position: relative;
-      width: auto;
+      width: 100%;
+      max-width: 100%;
       height: 100%;
+      box-sizing: border-box;
       margin: 0 auto; }
     .lightbox-wrapper .lightbox-inner img {
       max-width: 100%;
@@ -121,13 +125,23 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  background-image: url(../img/banner.jpg); }
+  background-image: url(../img/banner.jpg);
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; }
 
 .hp-img-overlay {
   padding: 0 30px 25px; }
 
+.hp-img-overlay {
+  display: grid;
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto; }
+
 .hp-button-wrapper {
-  grid-template-columns: 1fr 2fr 1fr; }
+  grid-template-columns: 1fr 2fr 1fr 2fr 1fr; }
 
 #hp-welcome {
   display: grid;
@@ -308,11 +322,16 @@ body {
   border-radius: 0;
   padding: 0;
   margin: 0;
+  cursor: pointer;
   border: 0 solid transparent;
   text-decoration: none;
   background-color: transparent;
   color: inherit;
   overflow: visible; }
+
+.gift-card img {
+  max-height: 182px;
+  max-width: 181px; }
 
 .cs-btn-learn-more {
   display: grid;
@@ -322,7 +341,7 @@ body {
   color: #fff;
   font-size: 2em;
   font-weight: 300;
-  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-family: "Yanone Kaffeesatz", sans-serif;
   text-align: center;
   border-radius: 10px;
   background-color: #515652;
@@ -339,7 +358,7 @@ body {
   font-size: 2em;
   font-weight: 300;
   text-align: center;
-  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-family: "Yanone Kaffeesatz", sans-serif;
   border-radius: 10px;
   background-color: #515652;
   line-height: 1; }
@@ -355,7 +374,7 @@ body {
   align-content: center;
   justify-self: end;
   border-radius: 5px;
-  background: #FFF; }
+  background: #fff; }
 
 .cs-btn-read-more {
   padding: 10px 20px;
@@ -847,10 +866,8 @@ footer {
   #hp-head-image {
     max-width: 100vw;
     background-position: top left; }
-    #hp-head-image .hp-img-overlay.gc-half {
-      grid-template-columns: 2fr 1fr; }
-  #hp-button-wrapper {
-    grid-template-columns: 2fr 1fr; }
+  .hp-button-wrapper {
+    grid-template-columns: 1fr 2fr 1fr 2fr 1fr; }
   #hp-rooms img {
     height: 100%; }
   #sp-container .sp-article .sp-section.gc-half {
@@ -869,16 +886,18 @@ footer {
     grid-template-columns: 350px 1fr; }
   #hp-head-image {
     max-height: 450px; }
-    #hp-head-image .hp-img-overlay.gc-half {
-      grid-template-columns: 2fr 1fr; }
-      #hp-head-image .hp-img-overlay.gc-half .cs-btn-learn-more,
-      #hp-head-image .hp-img-overlay.gc-half .cs-btn-watch-video {
-        width: 100px;
-        height: 53px;
-        font-size: 1.3em;
-        border-radius: 6px; }
-      #hp-head-image .hp-img-overlay.gc-half .book-now img {
-        height: 140px; }
+  .hp-button-wrapper {
+    grid-template-columns: 1fr 2fr 1fr 2fr 1fr;
+    grid-column-gap: 15px; }
+    .hp-button-wrapper .cs-btn-learn-more,
+    .hp-button-wrapper .cs-btn-watch-video {
+      width: 100px;
+      height: 53px;
+      font-size: 1.3em;
+      border-radius: 6px; }
+    .hp-button-wrapper .book-now img,
+    .hp-button-wrapper .gift-card img {
+      height: 140px; }
   #sp-container .sp-article .sp-section.gc-half img {
     max-width: 100%;
     height: auto !important; }
@@ -918,6 +937,14 @@ footer {
         display: block;
         height: 100px;
         width: auto; }
+  #hp-head-image {
+    background-position: -50px 0; }
+  .hp-button-wrapper {
+    grid-template-columns: 1fr 2fr 1fr 2fr; }
+    .hp-button-wrapper .cs-tripadvisor-btn {
+      position: absolute;
+      bottom: calc(100% + 15px);
+      right: 10px; }
   #hp-faqs .gc-half {
     grid-template-areas: "center";
     grid-template-columns: 1fr; }
@@ -932,18 +959,30 @@ footer {
 
 @media (max-width: 639px) {
   #hp-head-image {
+    background-position: top left;
     max-height: 300px; }
-    #hp-head-image .hp-img-overlay.gc-half {
+    #hp-head-image .hp-img-overlay {
       position: relative;
       grid-template-areas: "center";
       grid-template-columns: 1fr;
       padding: 0 20px 10px; }
-      #hp-head-image .hp-img-overlay.gc-half .book-now img {
-        height: 100px; }
+      #hp-head-image .hp-img-overlay .hp-button-wrapper {
+        bottom: -30px;
+        justify-content: center;
+        grid-template-columns: 1fr 2fr 1fr; }
+        #hp-head-image .hp-img-overlay .hp-button-wrapper .book-now img,
+        #hp-head-image .hp-img-overlay .hp-button-wrapper .gift-card img {
+          height: 100px; }
+        #hp-head-image .hp-img-overlay .hp-button-wrapper .gift-card {
+          position: absolute;
+          bottom: calc(100% + 10px);
+          left: -34%; }
+        #hp-head-image .hp-img-overlay .hp-button-wrapper #hp-btn-learn,
+        #hp-head-image .hp-img-overlay .hp-button-wrapper .book-now,
+        #hp-head-image .hp-img-overlay .hp-button-wrapper .cs-btn-watch-video {
+          position: relative; }
   .cs-tripadvisor-btn {
     position: absolute;
-    bottom: calc(100% + 40px);
-    right: 10px;
     height: 55px;
     width: 85px; }
     .cs-tripadvisor-btn img {
@@ -978,16 +1017,21 @@ footer {
   #hp-head-image {
     height: 220px;
     background-position: -30px 0; }
-    #hp-head-image .hp-img-overlay.gc-half .hp-button-wrapper.gc-thirds {
-      grid-template-columns: 1fr 1fr;
-      justify-content: right; }
-    #hp-head-image .hp-img-overlay.gc-half .book-now img {
-      height: 80px; }
-    #hp-head-image .hp-img-overlay.gc-half .cs-btn-learn-more {
-      height: 50px;
-      width: 80px; }
-    #hp-head-image .hp-img-overlay.gc-half .cs-btn-watch-video {
-      display: none; }
+    #hp-head-image .hp-img-overlay {
+      padding: 0 0 10px; }
+      #hp-head-image .hp-img-overlay .hp-button-wrapper {
+        grid-template-columns: 1fr 2fr 1fr;
+        justify-content: right;
+        padding: 0 10px 0; }
+      #hp-head-image .hp-img-overlay .book-now img {
+        height: 80px; }
+      #hp-head-image .hp-img-overlay .cs-btn-learn-more .cs-btn-watch-video {
+        height: 40px;
+        width: 60px; }
+      #hp-head-image .hp-img-overlay #hp-btn-learn,
+      #hp-head-image .hp-img-overlay .book-now,
+      #hp-head-image .hp-img-overlay .cs-btn-watch-video {
+        bottom: -35px; }
   #top .gc-half {
     grid-template-columns: 1fr 1fr; }
   #hp-about {
